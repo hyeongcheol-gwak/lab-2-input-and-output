@@ -1,0 +1,21 @@
+Name                                                        User:Group           Size    Blocks Type
+----------------------------------------------------------------------------------------------------
+demo
+  subdir1                                                   root:root            4096         8    d
+    simplefile                                              root:root             256         8     
+    sparsefile                                              root:root            8192         8     
+    thisisanextremelyveryverylongfilenameforsuchasi...      root:root            1000         8     
+  subdir2                                                   root:root            4096         8    d
+    brokenlink                                              root:root               8         0    l
+    symboliclink                                            root:root               6         0    l
+    textfile1.txt                                           root:root            1024         8     
+    textfile2.txt                                           root:root            2048         8     
+  subdir3                                                   root:root            4096         8    d
+    code1.c                                                 root:root             200         8     
+    code2.c                                                 root:root             300         8     
+    pipe                                                    root:root               0         0    f
+    socket                                                  root:root               0         0    s
+  one                                                       root:root               1         8     
+  two                                                       root:root               2         8     
+----------------------------------------------------------------------------------------------------
+9 files, 3 directories, 2 links, 1 pipe, and 1 socket                         25325        96

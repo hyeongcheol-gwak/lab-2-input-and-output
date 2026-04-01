@@ -1,0 +1,29 @@
+Name                                                        User:Group           Size    Blocks Type
+----------------------------------------------------------------------------------------------------
+demo/subdir2
+  brokenlink                                                root:root               8         0    l
+  symboliclink                                              root:root               6         0    l
+  textfile1.txt                                             root:root            1024         8     
+  textfile2.txt                                             root:root            2048         8     
+----------------------------------------------------------------------------------------------------
+2 files, 0 directories, 2 links, 0 pipes, and 0 sockets                          3086        16
+
+Name                                                        User:Group           Size    Blocks Type
+----------------------------------------------------------------------------------------------------
+demo/subdir3
+  code1.c                                                   root:root             200         8     
+  code2.c                                                   root:root             300         8     
+  pipe                                                      root:root               0         0    f
+  socket                                                    root:root               0         0    s
+----------------------------------------------------------------------------------------------------
+2 files, 0 directories, 0 links, 1 pipe, and 1 socket                             500        16
+
+Analyzed 2 directories:
+  total # of files:                       4
+  total # of directories:                 0
+  total # of links:                       2
+  total # of pipes:                       1
+  total # of sockets:                     1
+  total # of entries:                     8
+  total file size:                     3586
+  total # of blocks:                     32

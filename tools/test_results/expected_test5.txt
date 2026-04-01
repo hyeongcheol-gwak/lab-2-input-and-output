@@ -1,0 +1,13 @@
+Name                                                        User:Group           Size    Blocks Type
+----------------------------------------------------------------------------------------------------
+pat2
+  outer
+    inner
+      ababc                                                 root:root               1         8     
+  abababc                                                   root:root               1         8     
+  ababc                                                     root:root               1         8     
+  abc                                                       root:root               1         8     
+  c                                                         root:root               1         8     
+  xababcx                                                   root:root               1         8     
+----------------------------------------------------------------------------------------------------
+6 files, 0 directories, 0 links, 0 pipes, and 0 sockets                             6        48
