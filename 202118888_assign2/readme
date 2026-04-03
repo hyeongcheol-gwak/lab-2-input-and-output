@@ -1,0 +1,20 @@
+Name: [곽형철] Student ID: [2021-18888]
+
+Assignment: System Programming I/O Lab dirtree
+
+[Help Received] 
+   Google Gemini:
+      - 정규표현식 파싱을 위한 AST 노드 구조(`RegexNode`) 설계 및 구현 방향 도움.
+      - 메모이제이션(Memoization)을 활용한 문자열 매칭 함수(`memo_match`)의 인덱스 계산 에러 해결 방안 제시.
+      - 전반적인 코드 작성
+      - 해당 readme 작성
+
+[Time Spent]
+   이 과제를 수행하는 데 대략 15시간이 소요.
+
+[Assessment]
+   디렉토리 트리를 재귀적으로 순회하며 `lstat`과 `opendir`을 이용해 파일 및 디렉토리의 메타데이터를 수집하는 과정을 통해 I/O 시스템 프로그래밍에 대한 이해도를 높일 수 있었습니다.
+   또한, 입력된 정규 표현식 문자열을 파싱하여 추상 구문 트리(AST)를 구성하고, 이를 동적 계획법(DP)으로 평가하는 로직을 직접 구현해 보며 자료구조와 알고리즘이 시스템 유틸리티에 어떻게 적용되는지 깔끔하게 처리하는 방법을 배울 수 있었습니다.
+
+[Information for Grading / Known Bugs]
+   현재 파악된 알려진 버그는 없으며, 최대 탐색 깊이 제한(-d) 및 정규식 기반 항목 필터링(-f) 등 모든 제공된 옵션과 테스트 케이스에 대해 올바르게 작동함.
