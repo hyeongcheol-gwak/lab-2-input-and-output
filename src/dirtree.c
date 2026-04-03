@@ -316,7 +316,8 @@ typedef struct TreeNode
   int is_symlink;
   int is_fifo;
   int is_socket;
-  int has_error;
+  int lstat_error;
+  int opendir_error;
   char *error_msg;
 
   struct TreeNode **children;
@@ -382,7 +383,7 @@ TreeNode *build_tree(const char *path, const char *name, int depth)
 
   if (lstat(path, &node->st) < 0)
   {
-    node->has_error = 1;
+    node->lstat_error = 1;
     node->error_msg = strdup(strerror(errno));
     node->matches = (regex_root == NULL) || check_match(regex_root, name);
     node->subtree_matches = node->matches;
@@ -402,7 +403,7 @@ TreeNode *build_tree(const char *path, const char *name, int depth)
     DIR *dir = opendir(path);
     if (!dir)
     {
-      node->has_error = 1;
+      node->opendir_error = 1;
       node->error_msg = strdup(strerror(errno));
     }
     else
@@ -484,14 +485,19 @@ void print_tree(TreeNode *node, int depth, struct summary *stats)
   {
     printf("%s\n", name_buf);
   }
-  else if (node->has_error && node->error_msg)
+  else if (node->lstat_error)
   {
     printf("%s\n", name_buf);
-    printf("%*sERROR: %s\n", indent + 2, "", node->error_msg);
+    if (node->error_msg)
+      printf("%*sERROR: %s\n", indent + 2, "", node->error_msg);
   }
   else if (depth == 0)
   {
     printf("%s\n", name_buf);
+    if (node->opendir_error && node->error_msg)
+    {
+      printf("%*sERROR: %s\n", indent + 2, "", node->error_msg);
+    }
   }
   else
   {
@@ -538,6 +544,11 @@ void print_tree(TreeNode *node, int depth, struct summary *stats)
 
       stats->size += node->st.st_size;
       stats->blocks += node->st.st_blocks;
+    }
+
+    if (node->opendir_error && node->error_msg)
+    {
+      printf("%*sERROR: %s\n", indent + 2, "", node->error_msg);
     }
   }
 
@@ -658,10 +669,6 @@ int main(int argc, char *argv[])
 
   for (int i = 0; i < ndir; i++)
   {
-    if (i > 0)
-    {
-      printf("\n");
-    }
 
     struct summary dstat = {0};
 
@@ -672,6 +679,7 @@ int main(int argc, char *argv[])
 
     printf("%s", print_formats[1]);
     print_summary(&dstat);
+    printf("\n");
 
     tstat.dirs += dstat.dirs;
     tstat.files += dstat.files;
@@ -684,7 +692,7 @@ int main(int argc, char *argv[])
 
   if (ndir > 1)
   {
-    printf("\nAnalyzed %d directories:\n"
+    printf("Analyzed %d directories:\n"
            "  total # of files:        %16d\n"
            "  total # of directories:  %16d\n"
            "  total # of links:        %16d\n"
