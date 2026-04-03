@@ -5,4 +5,4 @@ test1/a
     c                                                       root:root            4096         8    d
     f                                                       root:root               0         0     
 ----------------------------------------------------------------------------------------------------
-1 file, 2 directories, 0 links, 0 pipes, and 0 sockets                         8192        16
+1 file, 2 directories, 0 links, 0 pipes, and 0 sockets                           8192        16

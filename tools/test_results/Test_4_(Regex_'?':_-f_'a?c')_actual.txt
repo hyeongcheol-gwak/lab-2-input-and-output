@@ -6,4 +6,4 @@ pat1
   abc                                                       root:root               1         8     
   axc                                                       root:root               1         8     
 ----------------------------------------------------------------------------------------------------
-3 files, 0 directories, 0 links, 0 pipes, and 0 sockets                           3        24
+3 files, 0 directories, 0 links, 0 pipes, and 0 sockets                             3        24

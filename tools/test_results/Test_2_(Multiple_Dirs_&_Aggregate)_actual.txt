@@ -6,7 +6,7 @@ demo/subdir2
   textfile1.txt                                             root:root            1024         8     
   textfile2.txt                                             root:root            2048         8     
 ----------------------------------------------------------------------------------------------------
-2 files, 0 directories, 2 links, 0 pipes, and 0 sockets                        3086        16
+2 files, 0 directories, 2 links, 0 pipes, and 0 sockets                          3086        16
 
 Name                                                        User:Group           Size    Blocks Type
 ----------------------------------------------------------------------------------------------------
@@ -16,7 +16,7 @@ demo/subdir3
   pipe                                                      root:root               0         0    f
   socket                                                    root:root               0         0    s
 ----------------------------------------------------------------------------------------------------
-2 files, 0 directories, 0 links, 1 pipe, and 1 socket                           500        16
+2 files, 0 directories, 0 links, 1 pipe, and 1 socket                             500        16
 
 Analyzed 2 directories:
   total # of files:                       4

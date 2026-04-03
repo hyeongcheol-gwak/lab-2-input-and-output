@@ -560,7 +560,7 @@ void print_summary(struct summary *stats)
 
   if (strlen(buf) > 68)
     strcpy(buf + 65, "...");
-  printf("%-68s %14llu %9llu\n", buf, stats->size, stats->blocks);
+  printf("%-68s   %14llu %9llu\n", buf, stats->size, stats->blocks);
 }
 
 /// Print program syntax and an optional error message. Aborts program.

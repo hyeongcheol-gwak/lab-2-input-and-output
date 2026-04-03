@@ -10,4 +10,4 @@ pat2
   c                                                         root:root               1         8     
   xababcx                                                   root:root               1         8     
 ----------------------------------------------------------------------------------------------------
-6 files, 0 directories, 0 links, 0 pipes, and 0 sockets                           6        48
+6 files, 0 directories, 0 links, 0 pipes, and 0 sockets                             6        48

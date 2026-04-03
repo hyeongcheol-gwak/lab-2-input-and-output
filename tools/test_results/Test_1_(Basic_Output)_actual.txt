@@ -18,4 +18,4 @@ demo
   one                                                       root:root               1         8     
   two                                                       root:root               2         8     
 ----------------------------------------------------------------------------------------------------
-9 files, 3 directories, 2 links, 1 pipe, and 1 socket                         25325        96
+9 files, 3 directories, 2 links, 1 pipe, and 1 socket                           25325        96
